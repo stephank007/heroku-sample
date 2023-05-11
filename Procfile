@@ -1,1 +1,1 @@
-web: gunicorn app:heroku-sample
+web: gunicorn app:webappsek
