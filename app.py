@@ -4,11 +4,8 @@ import dash_bootstrap_components as dbc
 from flask import Flask
 from dash import Dash, dcc, html, Input, Output, State
 
-app = Dash(
-    title='heroku-sample',
-    suppress_callback_exceptions=True,
-    prevent_initial_callbacks=True
-)
+app    = Dash(__name__)
+server = app.server
 
 alerts = html.Div(
     [
@@ -35,7 +32,6 @@ app.layout = dbc.Container(
     fluid=True,
 )
 
-server = app.server
 
 if __name__ == '__main__':
     app.run_server(debug=True)
